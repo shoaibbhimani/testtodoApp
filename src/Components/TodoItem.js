@@ -11,7 +11,6 @@ class TodoItem extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearForm = this.clearForm.bind(this);
         this.deleteTodo = this.deleteTodo.bind(this);
-        this.onChange = this.onChange.bind(this);
 
         this.state = {
             editable:false
@@ -19,11 +18,7 @@ class TodoItem extends React.Component {
 
     }
 
-    onChange(e){
-        e.stopPropagation();
-        return false;
 
-    }
 
     deleteTodo(e){
         (e) && (e.preventDefault());
@@ -75,7 +70,7 @@ class TodoItem extends React.Component {
     }
     render(){
         return(
-            <section className='todoRow'>
+            <section ref='todoRow' className='todoRow'>
                 {this.renderItem()}
             </section>
 

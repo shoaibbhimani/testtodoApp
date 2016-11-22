@@ -25,14 +25,9 @@ class TodoList extends  React.Component {
         return(
             <div>
                 <Sortable
-                    tag="div" // Defaults to "div"
                     options={{
-                        onMove:function (/**Event*/evt, /**Event*/originalEvent) {
-                            //return false
-                        }
+                        handle: ".todoItemWrapper"
                     }}
-
-
                 >
                     {this.renderTodos()}
                 </Sortable>
